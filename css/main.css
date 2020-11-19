@@ -1,0 +1,367 @@
+/**
+ * Centering Mixin.
+ * - Absolutely positions an element vertically / horizontally or both.
+ */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.topbar {
+  background-color: #e0e0e0;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.topbar a {
+  float: right;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.navbar {
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-bottom: -3px;
+}
+
+.navbar img {
+  height: 50px;
+  padding: 0;
+  margin: -16px;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:first-child {
+  float: left;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .navbar a:not(:first-child) {
+    display: none;
+  }
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+  .navbar.responsive {
+    position: relative;
+  }
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.notices {
+  padding-top: 1px;
+  background-color: #e0e0e0;
+  height: 50px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.notices .bolder {
+  font-weight: bolder;
+}
+
+.notices a {
+  color: #000000;
+}
+
+.hero {
+  background-color: #241c1c;
+  position: relative;
+  height: 100vh;
+  color: white;
+}
+
+.container {
+  width: 70%;
+  height: 60%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 3px solid whitesmoke;
+  border-radius: 2rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.container button {
+  border-color: white;
+  text-transform: uppercase;
+  color: white;
+  padding: 1rem;
+  background-color: transparent;
+  border-radius: 1rem;
+}
+
+.trends {
+  margin: auto;
+  max-width: 80%;
+}
+
+.trending {
+  padding-right: 2rem;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  padding-right: 2rem;
+}
+
+.slider {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: auto;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.trending-container {
+  min-width: 250px;
+  padding-right: 2rem;
+}
+
+.arrow {
+  height: 35px;
+  font-size: 30px;
+  padding: 3px 16px;
+  background-color: #e0e0e0;
+  color: black;
+  border-radius: 50%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background-color: #c4c4c4;
+  color: black;
+}
+
+.slide-img {
+  -webkit-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
+  height: 350px;
+  position: relative;
+}
+
+.slide-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.slide-img .overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(63, 63, 63, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+}
+
+.slide-img .overlay .buy-btn {
+  width: 160px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: Calibri;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+}
+
+.slide-img .overlay .buy-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.slide-img:hover .overlay {
+  visibility: visible;
+  -webkit-animation: fade 0.2s;
+          animation: fade 0.2s;
+}
+
+.product-detail {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.product-detail .product-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.product-detail .product-product a {
+  color: #222222;
+  margin: 5px 0px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding-right: 8px;
+}
+
+.product-detail .product-product span {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.product-detail .price {
+  color: #000000;
+  text-decoration: none;
+}
+
+.season {
+  margin: auto;
+  max-width: 80%;
+}
+
+.season-images {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  grid-gap: 10px;
+}
+
+.season-images img {
+  max-height: 300px;
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.season-images .img-1 {
+  min-height: 610px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+}
+/*# sourceMappingURL=main.css.map */

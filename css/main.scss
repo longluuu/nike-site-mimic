@@ -1,0 +1,338 @@
+// justify-content: center; HORIZONTAL CENTER
+// align-items: center; VERTICAL CENTER
+$colours: (
+   primary: rgb(20, 24, 255),
+   primary-light: lighten(rgb(20, 24, 255), 40%),
+   accent: #f3d77a,
+   background: #241c1c
+);
+
+/**
+ * Centering Mixin.
+ * - Absolutely positions an element vertically / horizontally or both.
+ */
+ @mixin centerer($horizontal: true, $vertical: true, $position: absolute) {
+    position: $position;
+  
+    @if ($horizontal and $vertical) {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    } @else if ($horizontal) {
+      left: 50%;
+      transform: translate(-50%, 0);
+    } @else if ($vertical) {
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+}
+
+@function colour($colours-name) {
+    @return map-get($colours, $colours-name)
+}
+
+body, html {
+    height: 100%;
+    // max-width: 80%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(250, 250, 250);
+   
+}
+
+// TOPBAR SECTION
+// @media screen and (min-width: 700px) {
+    .topbar {
+        // display: none;
+        background-color: #e0e0e0;
+        overflow: hidden;
+        padding: 0 2rem;
+        a {
+            float: right;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 10px 12px;
+            text-decoration: none;
+            font-size: 12px;
+        }
+    }
+// }
+
+// NAVBAR SECTION
+.navbar {
+    overflow: hidden;
+    padding: 0 2rem;
+    margin-bottom: -3px;
+    img {
+        height: 50px;
+        padding: 0;
+        margin: -16px;
+    }
+    a {
+        float: right;
+        display: block;
+        color: #000000;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    a:first-child {
+        float: left;
+    }
+    a:hover {
+        background-color: #ddd;
+        // color: rgb(155, 155, 155);
+    }
+    .icon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    // displays the icon
+    .navbar a:not(:first-child) {display: none;}
+    .navbar a.icon {
+      float: right;
+      display: block;
+    }
+    // keeps the menu button in place when opening menu
+    .navbar.responsive {position: relative;}
+    .navbar.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    // opens the links downwards
+    .navbar.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .2} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .2} 
+    to {opacity: 1}
+}
+
+.notices {
+    padding-top: 1px;
+    // padding-bottom: 5px;
+    background-color: #e0e0e0;
+    height: 50px;
+    text-align: center;
+    font-size: 12px;
+    .bolder {
+        font-weight: bolder;
+    }
+    a {
+        color: #000000;
+    }
+}
+
+// HERO SECTION
+.hero {
+    background-color: colour(background);
+    position: relative;
+    height: 100vh;
+    color: white;
+}
+
+.container {
+    width: 70%;
+    height: 60%;
+    @include centerer;
+    border: 3px solid whitesmoke;
+    border-radius: 2rem;
+    padding: 2rem;
+    overflow: hidden;
+    button {
+        border-color: white;
+        text-transform: uppercase;
+        color: white;
+        padding: 1rem;
+        background-color: transparent;
+        border-radius: 1rem;
+    }
+}
+
+// TRENDING SECTION 
+
+.trends {
+    margin: auto;
+    max-width: 80%;
+}
+
+.trending {
+    padding-right: 2rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-right: 2rem;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.trending-container {
+    min-width: 250px;
+    padding-right: 2rem;
+}
+
+.arrow {
+    height: 35px;
+    font-size: 30px;
+    padding: 3px 16px;
+    background-color: #e0e0e0;
+    color: black;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    background-color: rgb(196, 196, 196);
+    color: black;
+}
+  
+
+.slide-img {
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 1px;
+    height: 350px;
+    position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        box-sizing: border-box;
+    }
+    
+    .overlay {
+        @include centerer;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(63, 63, 63, 0.2);
+        // center the button
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // hide overlay until hover over image
+        visibility: hidden;
+        .buy-btn {
+            width: 160px;
+            height: 40px;
+            // center the text
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: Calibri;
+            border-radius: 20px;
+            box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+            
+        }
+        .buy-btn:hover  {
+            // color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: all ease 0.3s;
+        }
+    }
+}
+
+.slide-img:hover .overlay {
+    visibility: visible;
+    animation: fade 0.2s;
+}
+
+// detail-box
+.product-detail {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // type
+    .product-product {
+        display: flex;
+        flex-direction: column;
+        a {
+            color: #222222;
+            margin: 5px 0px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding-right: 8px;
+        }
+        span {
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+    .price {
+        color: #000000;
+        text-decoration: none;
+    }
+}
+
+.season {
+    margin: auto;
+    max-width: 80%;
+}
+.season-images {
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+
+    // padding: 10px;
+    img {
+        max-height: 300px;
+        /* Just in case there are inline attributes */
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover;
+    }
+    .img-1 {
+        min-height: 610px;
+        grid-row: 1 / 3;
+
+    }
+    
+}
+

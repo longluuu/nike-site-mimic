@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sass play</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- top bar meant to disappear under certain breakpoint -->
+    <section class="topbar">
+        <a href="#">Help</a> 
+        <a href="#">Log In</a> 
+        <a href="#">Sign Up</a>
+    </section>
+
+    <!-- navbar collapses under certain breakpoint -->
+    <section class="navbar" id="myNavbar">
+        <a href="#" class="logo"><img src="img/logo.jpg" alt="Logo"></a>
+        <a href="#">Sale</a>
+        <a href="#">Kids</a>
+        <a href="#">Women</a>
+        <a href="#">Men</a>
+        <a href="#">New Releases</a>
+        <a href="javascript:void(0);" class="icon" onclick="openMenu()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </section>
+
+    <!-- notices on slider bar -->
+    <section class="notices">
+        <p class="bolder notice fade">Now Get 10% Off <br>
+            <a href="#">Learn more</a></p>
+        <p class="notice fade">COVID-19: Information about my stores and deliveries. <a class="bolder" href="#">View here</a></p>
+        <p class="notice fade">We’ve extended our returns period to 60 days. <a class="bolder" href="#">Learn more</a></p>
+    </section>
+
+    <!-- hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>JavaScript Lesson</h1>    
+            <h3>Center this bitch</h3>
+            <!-- button to change background colour using js -->
+            <button onclick="greenBG()">disco disco</button>
+            <!-- button to generate motivational or life quote -->
+            <button id="generate-btn" onclick="genQuote()">change</button>
+            <h4 id="quote">Your limitation—it's only your imagination.</h4>
+            <h5>- <span id="author">author</span></h5>
+            <!-- button to change text content and colour -->
+            <p id="demo" onclick="myFunction()">Click me.</p>
+        </div>
+    </section>
+
+    <!-- trending -->
+    <section class="trends">
+        <h1>Trending</h1>
+        <div class="trending">
+            <p id="prev" class="arrow" onclick="prevClick()">&#8249;</p>
+            <!-- Slider -->
+            <div class="slider">
+                
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/1.jpg" alt="1">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 1</a>
+                            <span>new arrival</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£130</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/2.jpg" alt="2">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 2</a>
+                            <span>comfy</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£75</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/3.jpg" alt="3">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 3</a>
+                            <span>summer</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£70</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/4.jpg" alt="4">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 4</a>
+                            <span>earth</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£100</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/5.jpg" alt="5">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 5</a>
+                            <span>hood</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£90</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/6.jpg" alt="6">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 6</a>
+                            <span>layers</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£160</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/7.jpg" alt="7">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 7</a>
+                            <span>skater</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£80</a>
+                    </div>
+                </div>
+            </div>
+            <p id="next" class="arrow" onclick="nextClick()">&#8250;</p>
+        </div>
+    </section>
+
+    <!-- season -->
+    <section class="season">
+        <h1>Beat the cold</h1>
+        <div class="season-images">
+            <img class="img-1" src="img/1.jpg" alt="1">
+            <img class="img-2" src="img/2.jpg" alt="2">
+            <img class="img-3" src="img/3.jpg" alt="3">
+        </div>
+    </section>
+    
+    <!-- Exclusives -->
+    <section class="trends">
+        <h1>Exclusives</h1>
+        <div class="trending">
+            <p id="prev" class="arrow" onclick="prevClick()">&#8249;</p>
+            <!-- Slider -->
+            <div class="slider">
+                
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/1.jpg" alt="1">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 1</a>
+                            <span>new arrival</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£130</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/2.jpg" alt="2">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 2</a>
+                            <span>comfy</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£75</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/3.jpg" alt="3">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 3</a>
+                            <span>summer</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£70</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/4.jpg" alt="4">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 4</a>
+                            <span>earth</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£100</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/5.jpg" alt="5">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 5</a>
+                            <span>hood</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£90</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/6.jpg" alt="6">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 6</a>
+                            <span>layers</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£160</a>
+                    </div>
+                </div>
+    
+                <div class="trending-container">
+                    <!-- image -->
+                    <div class="slide-img">
+                        <img src="img/7.jpg" alt="7">
+                        <div class="overlay">
+                            <a href="#" class="buy-btn">Add to cart</a>
+                        </div>
+                    </div>
+                    <!-- detail box -->
+                    <div class="product-detail"> 
+                        <!-- type -->
+                        <div class="product-product">
+                            <a href="#">Fit 7</a>
+                            <span>skater</span>
+                        </div>
+                        <!-- pricing -->
+                        <a href="#" class="price">£80</a>
+                    </div>
+                </div>
+            </div>
+            <p id="next" class="arrow" onclick="nextClick()">&#8250;</p>
+        </div>
+    </section>
+    
+    <!-- Categories -->
+
+    <script src="js/myscripts.js"></script>
+</body>
+</html>
+
+
+
+
